@@ -26,8 +26,9 @@ public class ThumbnailAction {
 		 * 输出 D:\Program_Files\apache-tomcat-7.0.92\webapps\thumbnail\images
 		 */
 		String realUploadPath = session.getServletContext().getRealPath(uploadPath);
-
+		//真实照片上传路径
 		String imageUrl = uploadService.uploadImage(file, uploadPath, realUploadPath);//输出/images/和平之鸟.jpg
+		//压缩后照片上传路径
 		String thumImageUrl = thumbnailService.thumbnail(file, uploadPath, realUploadPath);//输出/images/thum_和平之鸟.jpg
 		/**
 		 * 此方法会转换转换失败
